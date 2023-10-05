@@ -40,9 +40,23 @@ public class App
                         JOptionPane.showMessageDialog(null, "Ingreso no válido. Intentalo de nuevo");
                     }
                     break;
-                case "Conversor de moneda":
+                case "Conversor de Moneda":
                     //creamos input para el dato
                     String inputMoneda = JOptionPane.showInputDialog("Ingresa tu moneda");
+
+                    //validamos si es double
+                    if (ValidarNumero(inputMoneda)) {
+
+                        //y se lo pasamos a esta variable
+                        Double miMoneda = Double.parseDouble(inputMoneda);
+                        //y usamos los métodos
+                        moneda.ConversorDeMoneda(miMoneda);
+
+                    } else {
+                        //le decimos que hacer en caso de error
+                        JOptionPane.showMessageDialog(null, "Ingreso no válido. Intentalo de nuevo");
+                    }
+
                     break;
             }
 
